@@ -26,47 +26,36 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Tabela.findAll", query = "SELECT t FROM Tabela t")
-    , @NamedQuery(name = "Tabela.findByColuna", query = "SELECT t FROM Tabela t WHERE t.coluna = :coluna")
-    , @NamedQuery(name = "Tabela.findByCdTabela", query = "SELECT t FROM Tabela t WHERE t.cdTabela = :cdTabela")})
+    , @NamedQuery(name = "Tabela.findByNome", query = "SELECT t FROM Tabela t WHERE t.nome = :nome")})
 public class Tabela implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Size(max = 2147483647)
-    @Column(name = "coluna")
-    private String coluna;
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "cd_tabela")
-    private Integer cdTabela;
+    @Size(min = 1, max = 2147483647)
+    @Column(name = "nome")
+    private String nome;
 
     public Tabela() {
     }
 
-    public Tabela(Integer cdTabela) {
-        this.cdTabela = cdTabela;
+    public Tabela(String nome) {
+        this.nome = nome;
     }
 
-    public String getColuna() {
-        return coluna;
+    public String getNome() {
+        return nome;
     }
 
-    public void setColuna(String coluna) {
-        this.coluna = coluna;
-    }
-
-    public Integer getCdTabela() {
-        return cdTabela;
-    }
-
-    public void setCdTabela(Integer cdTabela) {
-        this.cdTabela = cdTabela;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (cdTabela != null ? cdTabela.hashCode() : 0);
+        hash += (nome != null ? nome.hashCode() : 0);
         return hash;
     }
 
@@ -77,7 +66,7 @@ public class Tabela implements Serializable {
             return false;
         }
         Tabela other = (Tabela) object;
-        if ((this.cdTabela == null && other.cdTabela != null) || (this.cdTabela != null && !this.cdTabela.equals(other.cdTabela))) {
+        if ((this.nome == null && other.nome != null) || (this.nome != null && !this.nome.equals(other.nome))) {
             return false;
         }
         return true;
@@ -85,7 +74,7 @@ public class Tabela implements Serializable {
 
     @Override
     public String toString() {
-        return "servlets.Tabela[ cdTabela=" + cdTabela + " ]";
+        return "entidades.Tabela[ nome=" + nome + " ]";
     }
     
 }
