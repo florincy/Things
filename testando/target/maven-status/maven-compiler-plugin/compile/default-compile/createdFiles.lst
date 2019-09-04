@@ -1,0 +1,4 @@
+br/edu/iff/util/HibernateUtil.class
+br/edu/iff/testando/entidades/Usuario.class
+br/edu/iff/servlet/pegar.class
+br/edu/iff/servlet/parateste.class
