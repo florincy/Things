@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>linda-pag</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body style="text-align: center; background-color: pink;">
+	<h1 id="texto">Imagem 1</h2>
+	<br>
+	<img src="im1.jpg" id="imagem" width="400px" onmouseover="muda2()" onmouseout="muda3()">
+	<br>
+	<br>
+	<button type="button" class="btn btn-primary btn-lg" id="botao" onclick="muda()">Troca imagem</button>
+	<script type="text/javascript">
+		var int =1;
+		function muda(){
+			var a = document.getElementById('imagem');
+			var b = document.getElementById('texto');
+			if (int==1){
+				a.src ='img2.jpg';
+				b.innerHTML = 'Imagem 2';
+				int = 2;
+			}else{
+				a.src = 'im1.jpg';
+				b.innerHTML = 'Imagem 1';
+				int=1;
+			}
+			
+		}
+		function muda2 (){
+			var a = document.getElementById('imagem');
+			var b = document.getElementById('texto');
+			a.src ='img2.jpg';
+			b.innerHTML = 'Imagem 2';
+		}
+		function muda3(){
+			var a = document.getElementById('imagem');
+			var b = document.getElementById('texto');
+			a.src = 'im1.jpg';
+			b.innerHTML = 'Imagem 1';
+		}
+		
+	</script>
+
+
+</body>
+</html>
