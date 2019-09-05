@@ -81,8 +81,6 @@ public class pegar extends HttpServlet {
     Session session = HibernateUtil.getSession();
     Usuario user = (Usuario) session.createQuery("from Usuario where nome=?").setString(0, nome).uniqueResult();
     session.close();
-    HttpSession abriu = request.getSession();
-    response.sendRedirect("jsp.jsp");
     }
     
 

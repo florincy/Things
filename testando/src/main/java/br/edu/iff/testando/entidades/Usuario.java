@@ -26,21 +26,31 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u")
-    , @NamedQuery(name = "Usuario.findByNome", query = "SELECT u FROM Usuario u WHERE u.nome = :nome")})
+    , @NamedQuery(name = "Usuario.findByNome", query = "SELECT u FROM Usuario u WHERE u.nome = :nome")
+    , @NamedQuery(name = "Usuario.findByCdNome", query = "SELECT u FROM Usuario u WHERE u.cdNome = :cdNome")})
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
     @Column(name = "nome")
     private String nome;
+    @Id
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "cd_nome")
+    private Integer cdNome;
 
     public Usuario() {
     }
 
-    public Usuario(String nome) {
+    public Usuario(Integer cdNome) {
+        this.cdNome = cdNome;
+    }
+
+    public Usuario(Integer cdNome, String nome) {
+        this.cdNome = cdNome;
         this.nome = nome;
     }
 
@@ -52,10 +62,18 @@ public class Usuario implements Serializable {
         this.nome = nome;
     }
 
+    public Integer getCdNome() {
+        return cdNome;
+    }
+
+    public void setCdNome(Integer cdNome) {
+        this.cdNome = cdNome;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (nome != null ? nome.hashCode() : 0);
+        hash += (cdNome != null ? cdNome.hashCode() : 0);
         return hash;
     }
 
@@ -66,7 +84,7 @@ public class Usuario implements Serializable {
             return false;
         }
         Usuario other = (Usuario) object;
-        if ((this.nome == null && other.nome != null) || (this.nome != null && !this.nome.equals(other.nome))) {
+        if ((this.cdNome == null && other.cdNome != null) || (this.cdNome != null && !this.cdNome.equals(other.cdNome))) {
             return false;
         }
         return true;
@@ -74,7 +92,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "br.edu.iff.testando.entidades.Usuario[ nome=" + nome + " ]";
+        return "br.edu.iff.testando.entidades.Usuario[ cdNome=" + cdNome + " ]";
     }
     
 }
