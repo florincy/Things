@@ -16,6 +16,35 @@
 	<br>
 	<br>
 	<button type="button" class="btn btn-primary btn-lg" id="botao" onclick="muda()">Troca imagem</button>
+	<br>
+	<br>
+	<button type= "button" class="btn btn-primary btn-lg" id="teste1" onclick="document.write('teste na moral')">teste 1</button>
+	<br>
+	<br>
+	<button type= "button" class="btn btn-primary btn-lg" id="teste2" onclick="window.alert('teste na moral')">teste 2</button>
+	<br>
+	<br>
+	<button type= "button" class="btn btn-primary btn-lg" id="teste3" onclick="console.log('teste na moral')">teste 3</button>
+	<h1>Agora um form para vocês</h1>
+	<form>
+		<label for="nome">Nome:</label>
+		<input type="text" name="nome_user" id="nome">
+		<br>
+		<label for="sobrenome">Sobrenome:</label>
+		<input type="text" name="sobrenome_user" id="sobrenome">
+		<br>
+		<label for="nascimento">Nascimento:</label>
+		<input type="date" name="nascimento_user" id="nascimento">
+		<br>
+		<label for="rg">RG:</label>
+		<input type="number" name="rg_user" id="rg">
+		<br>
+		<label for="cpf">CPF:</label>
+		<input type="text" name="cpf" id="cpf" size="9" maxlength="9"></input>
+		<input type="text" name="cpf" id="cpf" size="2" maxlength="2"></input>
+		<br>
+		<input type="submit">
+	</form class="form-group">
 	<script type="text/javascript">
 		var int =1;
 		function muda(){
@@ -44,7 +73,6 @@
 			a.src = 'im1.jpg';
 			b.innerHTML = 'Imagem 1';
 		}
-		
 	</script>
 
 
