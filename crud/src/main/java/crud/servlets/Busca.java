@@ -5,12 +5,16 @@
  */
 package crud.servlets;
 
+import crud.entidades.Usuario;
+import crud.utilidades.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 /**
  *
@@ -70,6 +74,14 @@ public class Busca extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String idUsuario = request.getParameter("codigo");
+        String hql = "from Usuario u where u.id='"+idUsuario+"'";
+        Session session1 = HibernateUtil.getSession();
+        Transaction tr = session1.beginTransaction();
+        Usuario user = (Usuario) session1.createQuery(hql).uniqueResult();
+        tr.commit();
+        Integer id = user.getCdUsuario();
+        String nome = user.getNome();
         processRequest(request, response);
     }
 
