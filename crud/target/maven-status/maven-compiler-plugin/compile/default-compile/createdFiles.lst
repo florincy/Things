@@ -1,0 +1,5 @@
+crud/servlets/Busca.class
+crud/servlets/Salva.class
+crud/entidades/Usuario.class
+crud/utilidades/HibernateUtil.class
+crud/servlets/Atualiza.class

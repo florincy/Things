@@ -1,0 +1,5 @@
+/home/florincy/Sim/crud/src/main/java/crud/entidades/Usuario.java
+/home/florincy/Sim/crud/src/main/java/crud/servlets/Busca.java
+/home/florincy/Sim/crud/src/main/java/crud/servlets/Atualiza.java
+/home/florincy/Sim/crud/src/main/java/crud/servlets/Salva.java
+/home/florincy/Sim/crud/src/main/java/crud/utilidades/HibernateUtil.java
