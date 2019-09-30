@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>muitotop</title>
+	<meta charset="utf-8">
+</head>
+<body onload="onLoadedPage()">
+	<p id="p">Escreve</p>
+	<form>
+		<input type="text" id="nome">
+		<input type="password" name="senha" onkeyup="validarSenha()">
+		<p id="message">A força da senha:<span id="forca"></span></p>
+		<button onclick="tam()">Vai lá</button>
+	</form>
+</body>
+<script type="text/javascript">
+		const characters = "qwertyuiopasdfghjklçzxcvbnm";
+
+	document.getElementById('p').innerHTML = "Escrevi";
+	function onLoadedPage (){
+		const escola = "IFF Quissama";
+		console.log(escola.charAt(2));
+		console.log(escola.indexOf("Q"));
+			}
+	function tam (){
+		const name = document.getElementById("nome").value.trim();
+		let clearedString = "";
+		for (let i = 0; i< name.length; i++) {
+			 if (characters.indexOf(name[i]) > -1) {
+			 	clearedString += name[i];
+			 }
+		}
+		if(clearedString.length > 4){
+			alert("É sim. Olha" + clearedString);
+		}else{
+			alert("Não é não. Olha" + clearedString);
+		}
+	}
+	function validarSenha (){
+		const pass = document.getElementById("senha").value;
+		const message = document.getElementById("message");
+		const strenghtMessage = document.getElementById("forca");
+		const low "qwertyuiopasdfghjklçzxcvbnm";
+		const medium = "1234567890";
+		const strong = "!@#$%*()_+{}";
+		if(pass.length === 0){
+			return message.style.display = "block";
+		}
+		if (pass.length > 6) {
+			let hasStrongChar = false;
+			let hasMediumChar = false;
+			let hasLowChar = false;
+		}
+		for (let i = 0; i< pass.length;i++) {
+			pass[i];
+		}
+
+	}
+
+</script>
+</html>
