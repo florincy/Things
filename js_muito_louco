@@ -43,19 +43,43 @@
 		const low "qwertyuiopasdfghjklçzxcvbnm";
 		const medium = "1234567890";
 		const strong = "!@#$%*()_+{}";
+		let forca = "fraca";
+
 		if(pass.length === 0){
 			return message.style.display = "block";
+		} else{
+			strenghtMessage.innerHTML = "fraca";
+			message.style.display = "block";
 		}
+
 		if (pass.length > 6) {
 			let hasStrongChar = false;
 			let hasMediumChar = false;
 			let hasLowChar = false;
 		}
+		
 		for (let i = 0; i< pass.length;i++) {
-			pass[i];
+			if (strong.indexOF(pass[i]) > -1){
+				hasStrongChar = true;
+
+			} else if (medium.indexOf(pass[i]) > -1){
+				hasMediumChar = true;
+			}else{
+				hasLowChar=true;
+			}
 		}
-
+		if(hasStrongChar && hasMediumChar && hasLowChar){
+			strenghtMessage.innerHTML = "forte";
+		}else if (hasMediumChar && hasLowChar){
+			strenghtMessage.innerHTML = "média";
+		} else {
+			strenghtMessage.innerHTML = "fraca";
+		}
 	}
-
 </script>
+<style type="text/css">
+	p{
+		display: none;
+	}
+</style>
 </html>

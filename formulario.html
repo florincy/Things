@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>muitotop</title>
+	<meta charset="utf-8">
+</head>
+<body onload="onLoadedPage()">
+	<p id="p">Escreve</p>
+	<form method="post">
+		Nome:<input onkeyup="tam()" type="text" id="nome" placeholder="Mínimo de 4 caracteres">
+		<span id="clearedString"></span>
+		<br>
+		<br>
+		Senha:<input type="password" id="password" onkeyup="validatePassword()" placeholder="Digite sua senha" />
+		<p id="message">A força da senha:<span id="passwordStrength"></span></p>
+		<br>
+		<br>
+		Email:<input type="email" id="email" placeholder="example@example.com">
+		<br>
+		<br>
+		Data:<input onchange="validardataDeNascimento(this.value);" id="dataDeNascimento" type="date">
+		<span id="mensagem"></span>
+		<br>
+		<br>
+		<input type="url" id="url" placeholder="https://example.com" pattern="https://.*">
+		<input type="hidden" value="valorOculto">
+	</form>
+</body>
+<script type="text/javascript">
+		const characters = "qwertyuiopasdfghjklçzxcvbnm";
+
+	document.getElementById('p').innerHTML = "Escrevi";
+	function onLoadedPage (){
+		const escola = "IFF Quissama";
+		console.log(escola.charAt(2));
+		console.log(escola.indexOf("Q"));
+			}
+	function tam (){
+		const name = document.getElementById("nome").value.trim();
+		let clearedString = "";
+		for (let i = 0; i< name.length; i++) {
+			 if (characters.indexOf(name[i]) > -1) {
+			 	clearedString += name[i];
+			 }
+		}
+		if(clearedString.length >= 4){
+			clearedString = document.getElementById("clearedString").innerHTML = "Está correto";
+		}else{
+			clearedString = document.getElementById("clearedString").innerHTML = "Insira mais caracteres";
+		}
+	}
+	function validatePassword(){
+		const pass = document.getElementById("password").value;
+		const message = document.getElementById("message");
+		const StrengthMessage = document.getElementById("passwordStrength");
+		const low = "qwertyuiopasdfghjklçzxcvbnm";
+		const medium = "1234567890";
+		const strong = "!@#$%*()_+{}";
+		let passwordStrength = "fraca";
+
+		if(pass.length === 0){
+			return message.style.display = "none";
+		} else{
+			StrengthMessage.innerHTML = "fraca";
+			message.style.display = "block";
+		}
+
+		if (pass.length > 6) {
+			let hasStrongChar = false;
+			let hasMediumChar = false;
+			let hasLowChar = false;
+		
+		
+		for (let i = 0; i< pass.length;i++) {
+			if (strong.indexOf(pass[i]) > -1){
+				hasStrongChar = true;
+
+			} else if (medium.indexOf(pass[i]) > -1){
+				hasMediumChar = true;
+			}else{
+				hasLowChar=true;
+			}
+		}
+
+		if(hasStrongChar && hasMediumChar && hasLowChar){
+			StrengthMessage.innerHTML = "forte";
+		}else if (hasMediumChar && hasLowChar){
+			StrengthMessage.innerHTML = "média";
+		} else {
+			StrengthMessage.innerHTML = "fraca";
+		}
+	}
+	}
+
+	function validateEmail(){
+	}
+        function validardataDeNascimento(data){
+
+            dataAtual= new Date();
+
+            data=new Date(data);
+            let mensagem;
+            if (data<dataAtual){
+                
+                mensagem = document.getElementById("mensagem").innerHTML = "Data válida";
+                return true;
+            } else {
+                mensagem = document.getElementById("mensagem").innerHTML = "Data inválida";
+                return false;
+            }
+
+
+        }
+    
+</script>
+<style type="text/css">
+	p{
+		display: none;
+	}
+
+</style>
+</html>
