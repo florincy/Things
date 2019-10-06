@@ -24,6 +24,20 @@
 		<br>
 		<input type="url" id="url" placeholder="https://example.com" pattern="https://.*">
 		<input type="hidden" value="valorOculto">
+		<br>
+		Escreva sobre você. Mínimo 100 caracteres:
+		<br>
+		<textarea id="caixaDeTexto" onkeyup="validarTexto()"></textarea>
+		<span id="textoM"></span>
+		<br>
+		<select>
+			<option value="a">a</option>
+			<option value="b" selected>b</option>
+			<option value="c">c</option>
+		</select>
+		<br>
+		<input type="radio" name="radio" value="1"> Opção 1
+		<input type="radio" name="radio" value="2" checked> Opção 2
 	</form>
 </body>
 <script type="text/javascript">
@@ -109,6 +123,15 @@
                 return false;
             }
 
+
+        }
+        function validarTexto(){
+       	const texto = document.getElementById("caixaDeTexto").value.trim();
+		if(texto.length >= 100){
+			textoM = document.getElementById("textoM").innerHTML = "Está correto";
+		}else{
+			textoM = document.getElementById("textoM").innerHTML = "Insira mais caracteres";
+		}
 
         }
     
