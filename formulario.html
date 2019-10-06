@@ -22,27 +22,39 @@
 		<span id="mensagem"></span>
 		<br>
 		<br>
-		<input type="url" id="url" placeholder="https://example.com" pattern="https://.*">
+		Insira uma URL:<input type="url" id="url" placeholder="https://example.com" pattern="https://.*">
 		<input type="hidden" value="valorOculto">
-		<br>
+		<br> <br>
 		Escreva sobre você. Mínimo 100 caracteres:
 		<br>
 		<textarea id="caixaDeTexto" onkeyup="validarTexto()"></textarea>
 		<span id="textoM"></span>
-		<br>
+		<br> <br>
 		<select>
 			<option value="a">a</option>
 			<option value="b" selected>b</option>
 			<option value="c">c</option>
 		</select>
-		<br>
-		<input type="radio" name="radio" value="1"> Opção 1
-		<input type="radio" name="radio" value="2" checked> Opção 2
+		<br> <br>
+		Selecione uma opção:
+		<input type="radio" name="radio" value="1" id="opcao1" onchange="validarRadio()"> Opção 1
+		<input type="radio" name="radio" value="2" id="opcao2" onchange="validarRadio()"> Opção 2
+		<input type="radio" name="radio" value="3" id="opcao3" onchange="validarRadio()"> Opção 3
+		<span id=checkoption></span>
+		<br> <br>
+		Selecione uma ou mais opções:
+		<input type="checkbox" name="checkbox" value="1" id="opcao1c" onchange="validarCheckbox()"> Opção 1
+		<input type="checkbox" name="checkbox" value="2" id="opcao2c" onchange="validarCheckbox()"> Opção 2
+		<span id=checkboxoption></span>
+		<br> <br>
+		<label>Insira um número de 1 à 100:</label>
+		<input type="range" id="fromPrice" value="1" min="1" max="100" oninput="document.getElementById('fPrice').innerHTML = this.value" />
+		<label id="fPrice"></label>
+
 	</form>
 </body>
 <script type="text/javascript">
 		const characters = "qwertyuiopasdfghjklçzxcvbnm";
-
 	document.getElementById('p').innerHTML = "Escrevi";
 	function onLoadedPage (){
 		const escola = "IFF Quissama";
@@ -71,14 +83,12 @@
 		const medium = "1234567890";
 		const strong = "!@#$%*()_+{}";
 		let passwordStrength = "fraca";
-
 		if(pass.length === 0){
 			return message.style.display = "none";
 		} else{
 			StrengthMessage.innerHTML = "fraca";
 			message.style.display = "block";
 		}
-
 		if (pass.length > 6) {
 			let hasStrongChar = false;
 			let hasMediumChar = false;
@@ -88,14 +98,12 @@
 		for (let i = 0; i< pass.length;i++) {
 			if (strong.indexOf(pass[i]) > -1){
 				hasStrongChar = true;
-
 			} else if (medium.indexOf(pass[i]) > -1){
 				hasMediumChar = true;
 			}else{
 				hasLowChar=true;
 			}
 		}
-
 		if(hasStrongChar && hasMediumChar && hasLowChar){
 			StrengthMessage.innerHTML = "forte";
 		}else if (hasMediumChar && hasLowChar){
@@ -105,13 +113,10 @@
 		}
 	}
 	}
-
 	function validateEmail(){
 	}
         function validardataDeNascimento(data){
-
             dataAtual= new Date();
-
             data=new Date(data);
             let mensagem;
             if (data<dataAtual){
@@ -122,8 +127,6 @@
                 mensagem = document.getElementById("mensagem").innerHTML = "Data inválida";
                 return false;
             }
-
-
         }
         function validarTexto(){
        	const texto = document.getElementById("caixaDeTexto").value.trim();
@@ -132,14 +135,42 @@
 		}else{
 			textoM = document.getElementById("textoM").innerHTML = "Insira mais caracteres";
 		}
+	}
 
-        }
+		function validarRadio(){
+			const op1 = document.getElementById("opcao1");
+			const op2 = document.getElementById("opcao2");
+			const op3 = document.getElementById("opcao3");
+			if(op1.checked==true){
+			document.getElementById("checkoption").innerHTML = "Você selecionou a Opção 1";
+			}else if(op2.checked==true){
+			document.getElementById("checkoption").innerHTML = "Você selecionou a Opção 2";
+			}else{
+			document.getElementById("checkoption").innerHTML = "Você selecionou a Opção 3";
+			}
+
+		}
+
+		function validarCheckbox(){
+			const opc1 = document.getElementById("opcao1c");
+			const opc2 = document.getElementById("opcao2c");
+			if((opc1.checked) && (opc2.checked)){
+				document.getElementById("checkboxoption").innerHTML = "Você selecionou as Opções 1 e 2";
+			}else if (opc1.checked==true){
+				document.getElementById("checkboxoption").innerHTML = "Você selecionou a Opção 1";
+			}else if(opc2.checked){
+				document.getElementById("checkboxoption").innerHTML = "Você selecionou a Opção 2";
+			}else if((opc2 && opc1).checked==false){
+				document.getElementById("checkboxoption").innerHTML = "";
+			}
+		}
+
+ 
     
 </script>
 <style type="text/css">
 	p{
 		display: none;
 	}
-
 </style>
 </html>
