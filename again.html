@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>again</title>
+	<meta charset="utf-8">
+</head>
+<body onload="onLoadPage()">
+<input type="text" id="text" onkeyup="validateInput()">
+<h1 id="title"></h1>
+</body>
+<script type="text/javascript">
+		let iterable = [11, 20, 30];
+		for (let value of iterable) {
+  		console.log(value);
+	}
+	function validateInput (){
+		const {value} = document.getElementById("text");
+		//const message = `O campo está ${(value.length === 0)? "Vazio":"Prenchido";}`;
+		let message = "O campo está ";
+		message += (value.length ===0)? "Vazio":"Prenchido";
+		//propiedade  condição          true     else
+		console.log(message);
+	}
+	/*function nada () {
+		const User = {
+			name;
+			age;
+			money;
+		}
+		const user = {name, age,money};
+		console.log(user);
+	}
+	*/
+	
+		function onLoadPage (){
+			const messages = ["Inovador", "Diferente", "Interessante"];
+			let count = -1;
+			setInterval(function(){count = (count >= messages.length-1)? 0 : count +1; document.getElementById("title").innerHTML = `Programar é ${messages[count]}`;}, 1500)
+	}
+</script>
+</html>
