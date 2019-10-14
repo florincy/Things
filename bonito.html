@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bonito</title>
+</head>
+<body>
+	<form>
+		<input type="text" name="" placeholder="escreva" title="Escreve rápido" class="column">
+		<input type="number" id="cpf" onchange="valida()">
+	</form>
+</body>
+<style type="text/css">
+form{
+	display: flex;
+	flex-direction: row;
+}
+form > input {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 2px;
+}
+</style>
+<script type="text/javascript">
+	function valida(){
+		const cpf = document.getElementById("cpf").value;
+		let numeros = "";
+		for (let i = 0;i<4;i++) {
+			numeros =  numeros + cpf.charAt(i);
+			
+		}
+		console.log(numeros);
+
+	}
+</script>
+</html>
