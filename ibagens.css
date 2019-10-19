@@ -20,3 +20,7 @@
 ul li{
 display:flex;
 }
+.delete{
+    background: transparent;
+    border: 0;
+}

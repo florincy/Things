@@ -39,7 +39,7 @@
                     <div hidden>
                         ID<input type="text" name="pid" value="<%=idFoto%>">
                     </div>
-                    <input type="submit" value="Deletar foto">
+                    <button type="submit" class="delete"><img src="imagens/delete.png" style="width:90px;"></button>
                 </form>
             </div>
             <%
@@ -48,7 +48,9 @@
         </div>
         </li>
         <li>
+        <div id="btninserir">
             <a href="fotoinserir.jsp" ><input type="button" value="Enviar foto"></a>
+        </div>
         </li>
         </ul>
     </body>
