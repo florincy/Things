@@ -5,8 +5,8 @@
 </head>
 <body>
 	<form>
-		<input type="text" name="" placeholder="escreva" title="Escreve rápido" class="column">
-		<input type="number" id="cpf" onchange="valida()">
+		<input type="number" id="cpf" onchange="valida()" title="Escreve rápido" placeholder="Coloque seu CPF">
+		<p id="mensagem"></p>
 	</form>
 </body>
 <style type="text/css">
@@ -24,11 +24,18 @@ form > input {
 	function valida(){
 		const cpf = document.getElementById("cpf").value;
 		let numeros = "";
+		let mensagem;
 		for (let i = 0;i<4;i++) {
 			numeros =  numeros + cpf.charAt(i);
 			
 		}
-		console.log(numeros);
+		if (numeros>2019||numeros<1900){
+            mensagem = document.getElementById("mensagem").innerHTML = numeros+" é uma data inválida";
+
+		}else{
+			mensagem = document.getElementById("mensagem").innerHTML = numeros+" é uma data válida";
+
+		}
 
 	}
 </script>
