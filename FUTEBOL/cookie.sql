@@ -1,4 +1,4 @@
---
+﻿--
 -- PostgreSQL database dump
 --
 
@@ -97,15 +97,8 @@ ALTER TABLE flamengo OWNER TO postgres;
 -- Name: flamengo_idfla_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
-CREATE SEQUENCE flamengo_idfla_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
 
 
-ALTER TABLE flamengo_idfla_seq OWNER TO postgres;
 
 --
 -- TOC entry 2169 (class 0 OID 0)
@@ -113,7 +106,6 @@ ALTER TABLE flamengo_idfla_seq OWNER TO postgres;
 -- Name: flamengo_idfla_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
-ALTER SEQUENCE flamengo_idfla_seq OWNED BY flamengo.idfla;
 
 
 --
@@ -136,15 +128,8 @@ ALTER TABLE fluminense OWNER TO postgres;
 -- Name: fluminense_idflu_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
-CREATE SEQUENCE fluminense_idflu_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
 
 
-ALTER TABLE fluminense_idflu_seq OWNER TO postgres;
 
 --
 -- TOC entry 2170 (class 0 OID 0)
@@ -152,7 +137,6 @@ ALTER TABLE fluminense_idflu_seq OWNER TO postgres;
 -- Name: fluminense_idflu_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
-ALTER SEQUENCE fluminense_idflu_seq OWNED BY fluminense.idflu;
 
 
 --
@@ -160,7 +144,6 @@ ALTER SEQUENCE fluminense_idflu_seq OWNED BY fluminense.idflu;
 -- Name: idc; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY ceara ALTER COLUMN idc SET DEFAULT nextval('"ceará_idc_seq"'::regclass);
 
 
 --
@@ -168,7 +151,6 @@ ALTER TABLE ONLY ceara ALTER COLUMN idc SET DEFAULT nextval('"ceará_idc_seq"'::
 -- Name: idfla; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY flamengo ALTER COLUMN idfla SET DEFAULT nextval('flamengo_idfla_seq'::regclass);
 
 
 --
@@ -176,7 +158,6 @@ ALTER TABLE ONLY flamengo ALTER COLUMN idfla SET DEFAULT nextval('flamengo_idfla
 -- Name: idflu; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY fluminense ALTER COLUMN idflu SET DEFAULT nextval('fluminense_idflu_seq'::regclass);
 
 
 --
@@ -185,8 +166,7 @@ ALTER TABLE ONLY fluminense ALTER COLUMN idflu SET DEFAULT nextval('fluminense_i
 -- Data for Name: ceara; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY ceara (ataque, defesa, "lateral", idc) FROM stdin;
-\.
+
 
 
 --
@@ -195,7 +175,6 @@ COPY ceara (ataque, defesa, "lateral", idc) FROM stdin;
 -- Name: ceará_idc_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"ceará_idc_seq"', 1, false);
 
 
 --
@@ -204,8 +183,7 @@ SELECT pg_catalog.setval('"ceará_idc_seq"', 1, false);
 -- Data for Name: flamengo; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY flamengo (ataque, defesa, "lateral", idfla) FROM stdin;
-\.
+
 
 
 --
@@ -214,7 +192,6 @@ COPY flamengo (ataque, defesa, "lateral", idfla) FROM stdin;
 -- Name: flamengo_idfla_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('flamengo_idfla_seq', 1, false);
 
 
 --
@@ -223,8 +200,7 @@ SELECT pg_catalog.setval('flamengo_idfla_seq', 1, false);
 -- Data for Name: fluminense; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY fluminense (ataque, defesa, "lateral", idflu) FROM stdin;
-\.
+
 
 
 --
@@ -233,7 +209,6 @@ COPY fluminense (ataque, defesa, "lateral", idflu) FROM stdin;
 -- Name: fluminense_idflu_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('fluminense_idflu_seq', 1, false);
 
 
 --
