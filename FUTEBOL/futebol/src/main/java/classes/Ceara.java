@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -37,12 +38,13 @@ public class Ceara implements Serializable {
     private Integer ataque;
     @Column(name = "defesa")
     private Integer defesa;
-    @Column(name = "lateral")
+    @Column(name = "lado")
     private Integer lateral;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "idc")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gerador")
+    @SequenceGenerator(name = "gerador", sequenceName = "sq_ceara") 
     private Integer idc;
 
     public Ceara() {

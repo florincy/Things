@@ -1,4 +1,4 @@
---
+﻿--
 -- PostgreSQL database dump
 --
 
@@ -9,7 +9,6 @@
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
@@ -59,15 +58,9 @@ ALTER TABLE public.ceara OWNER TO postgres;
 -- Name: ceará_idc_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
-CREATE SEQUENCE public."ceará_idc_seq"
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
 
 
-ALTER TABLE public."ceará_idc_seq" OWNER TO postgres;
+
 
 --
 -- TOC entry 2944 (class 0 OID 0)
@@ -75,7 +68,6 @@ ALTER TABLE public."ceará_idc_seq" OWNER TO postgres;
 -- Name: ceará_idc_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
-ALTER SEQUENCE public."ceará_idc_seq" OWNED BY public.ceara.idc;
 
 
 --
@@ -159,8 +151,7 @@ ALTER TABLE public.sq_fluminense OWNER TO postgres;
 -- Data for Name: ceara; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.ceara (ataque, defesa, "lateral", idc) FROM stdin;
-\.
+
 
 
 --
@@ -169,9 +160,7 @@ COPY public.ceara (ataque, defesa, "lateral", idc) FROM stdin;
 -- Data for Name: flamengo; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.flamengo (ataque, defesa, lado, idfla) FROM stdin;
-79	85	18	50
-\.
+
 
 
 --
@@ -180,8 +169,7 @@ COPY public.flamengo (ataque, defesa, lado, idfla) FROM stdin;
 -- Data for Name: fluminense; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.fluminense (ataque, defesa, "lateral", idflu) FROM stdin;
-\.
+
 
 
 --
@@ -190,7 +178,6 @@ COPY public.fluminense (ataque, defesa, "lateral", idflu) FROM stdin;
 -- Name: ceará_idc_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."ceará_idc_seq"', 1, false);
 
 
 --

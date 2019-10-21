@@ -1,5 +1,7 @@
 servlets/ServletFlamengo.class
 util/HibernateUtil.class
+servlets/ServletFluminense.class
 classes/Flamengo.class
 classes/Ceara.class
 classes/Fluminense.class
+servlets/ServletCeara.class

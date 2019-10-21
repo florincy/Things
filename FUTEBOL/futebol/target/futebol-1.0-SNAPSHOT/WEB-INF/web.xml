@@ -4,9 +4,25 @@
         <servlet-name>ServletFlamengo</servlet-name>
         <servlet-class>servlets.ServletFlamengo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletCeara</servlet-name>
+        <servlet-class>servlets.ServletCeara</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletFluminense</servlet-name>
+        <servlet-class>servlets.ServletFluminense</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletFlamengo</servlet-name>
         <url-pattern>/ServletFlamengo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletCeara</servlet-name>
+        <url-pattern>/ServletCeara</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletFluminense</servlet-name>
+        <url-pattern>/ServletFluminense</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

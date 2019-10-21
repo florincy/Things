@@ -5,6 +5,7 @@
  */
 package servlets;
 
+import classes.Ceara;
 import classes.Flamengo;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,9 +19,9 @@ import util.HibernateUtil;
 
 /**
  *
- * @author admin
+ * @author aluno
  */
-public class ServletFlamengo extends HttpServlet {
+public class ServletFluminense extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,10 +40,10 @@ public class ServletFlamengo extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ServletFlamengo</title>");
+            out.println("<title>Servlet ServletFluminense</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ServletFlamengo at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ServletFluminense at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -74,13 +75,13 @@ public class ServletFlamengo extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Flamengo fla = new Flamengo();
-        fla.setAtaque(Integer.parseInt(request.getParameter("ataque")));
-        fla.setDefesa(Integer.parseInt(request.getParameter("defesa")));
-        fla.setLateral(Integer.parseInt(request.getParameter("lateral")));
+        Ceara ce = new Ceara();
+        ce.setAtaque(Integer.parseInt(request.getParameter("ataque")));
+        ce.setDefesa(Integer.parseInt(request.getParameter("defesa")));
+        ce.setLateral(Integer.parseInt(request.getParameter("lateral")));
         Session session = HibernateUtil.getSession();
         Transaction tr = session.beginTransaction();
-        session.save(fla);
+        session.save(ce);
         tr.commit();
         session.close();
         response.sendRedirect("index.html");

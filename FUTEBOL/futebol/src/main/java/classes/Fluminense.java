@@ -38,7 +38,7 @@ public class Fluminense implements Serializable {
     private Integer ataque;
     @Column(name = "defesa")
     private Integer defesa;
-    @Column(name = "lateral")
+    @Column(name = "lado")
     private Integer lateral;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gerador")
