@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.7
 -- Dumped by pg_dump version 9.5.7
 
--- Started on 2019-10-21 12:39:04 BRST
+-- Started on 2019-10-21 12:48:19 BRST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -40,10 +40,10 @@ SET default_with_oids = false;
 
 --
 -- TOC entry 183 (class 1259 OID 42119)
--- Name: ceará; Type: TABLE; Schema: public; Owner: postgres
+-- Name: ceara; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE "ceará" (
+CREATE TABLE ceara (
     ataque integer,
     defesa integer,
     "lateral" integer,
@@ -51,7 +51,7 @@ CREATE TABLE "ceará" (
 );
 
 
-ALTER TABLE "ceará" OWNER TO postgres;
+ALTER TABLE ceara OWNER TO postgres;
 
 --
 -- TOC entry 184 (class 1259 OID 42122)
@@ -74,7 +74,7 @@ ALTER TABLE "ceará_idc_seq" OWNER TO postgres;
 -- Name: ceará_idc_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
-ALTER SEQUENCE "ceará_idc_seq" OWNED BY "ceará".idc;
+ALTER SEQUENCE "ceará_idc_seq" OWNED BY ceara.idc;
 
 
 --
@@ -160,7 +160,7 @@ ALTER SEQUENCE fluminense_idflu_seq OWNED BY fluminense.idflu;
 -- Name: idc; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY "ceará" ALTER COLUMN idc SET DEFAULT nextval('"ceará_idc_seq"'::regclass);
+ALTER TABLE ONLY ceara ALTER COLUMN idc SET DEFAULT nextval('"ceará_idc_seq"'::regclass);
 
 
 --
@@ -182,10 +182,10 @@ ALTER TABLE ONLY fluminense ALTER COLUMN idflu SET DEFAULT nextval('fluminense_i
 --
 -- TOC entry 2156 (class 0 OID 42119)
 -- Dependencies: 183
--- Data for Name: ceará; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: ceara; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY "ceará" (ataque, defesa, "lateral", idc) FROM stdin;
+COPY ceara (ataque, defesa, "lateral", idc) FROM stdin;
 \.
 
 
@@ -241,7 +241,7 @@ SELECT pg_catalog.setval('fluminense_idflu_seq', 1, false);
 -- Name: pk_idc; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY "ceará"
+ALTER TABLE ONLY ceara
     ADD CONSTRAINT pk_idc PRIMARY KEY (idc);
 
 
@@ -275,7 +275,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2019-10-21 12:39:04 BRST
+-- Completed on 2019-10-21 12:48:19 BRST
 
 --
 -- PostgreSQL database dump complete
