@@ -83,7 +83,7 @@ public class ServletFlamengo extends HttpServlet {
         session.save(fla);
         tr.commit();
         session.close();
-        response.sendRedirect("index.html");
+        response.sendRedirect("index.jsp");
     }
 
     /**

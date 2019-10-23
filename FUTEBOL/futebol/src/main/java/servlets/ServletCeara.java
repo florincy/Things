@@ -5,6 +5,7 @@
  */
 package servlets;
 
+import classes.Ceara;
 import classes.Flamengo;
 import classes.Fluminense;
 import java.io.IOException;
@@ -75,16 +76,16 @@ public class ServletCeara extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Fluminense flu = new Fluminense();
-        flu.setAtaque(Integer.parseInt(request.getParameter("ataque")));
-        flu.setDefesa(Integer.parseInt(request.getParameter("defesa")));
-        flu.setLateral(Integer.parseInt(request.getParameter("lateral")));
+        Ceara ce = new Ceara();
+        ce.setAtaque(Integer.parseInt(request.getParameter("ataque")));
+        ce.setDefesa(Integer.parseInt(request.getParameter("defesa")));
+        ce.setLateral(Integer.parseInt(request.getParameter("lateral")));
         Session session = HibernateUtil.getSession();
         Transaction tr = session.beginTransaction();
-        session.save(flu);
+        session.save(ce);
         tr.commit();
         session.close();
-        response.sendRedirect("index.html");
+        response.sendRedirect("index.jsp");
     }
 
     /**
